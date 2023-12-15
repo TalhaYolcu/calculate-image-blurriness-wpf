@@ -1,0 +1,30 @@
+﻿<Window x:Class="AutoFocus.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoFocus"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <Button x:Name="BrowseImageButton" Content="Browse Image" Width="100" Click="BrowseImageButton_Click"/>
+            <Button x:Name="ApplyFilterButton" Content="Apply Filter" Width="100" Click="ApplyFilterButton_Click" Margin="10,0,0,0"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image x:Name="OriginalImage" Grid.Column="0" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Image x:Name="FilteredImage" Grid.Column="1" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Grid>
+    </Grid>
+</Window>
